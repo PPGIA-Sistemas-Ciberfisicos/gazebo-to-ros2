@@ -30,10 +30,18 @@ Don't forget to source the environment after building:
 source install/setup.bash
 ```
 
-## Running the Launch
+## Running the simulation
 
 To start the scene in Gazebo and initialize the `gzbridge`, run:
 
 ```bash
 ros2 launch gazebo_gz_to_ros2_simples husky_LiDAR_Dept.launch.py
 ```
+
+To start only the gazebo simulation run:
+
+```bash
+ros2 launch ros_gz_sim gz_sim.launch.py gz_args:="~/ros2_ws/src/gazebo-to-ros2/gz_sim/worlds/husky/husky_LiDAR_Dept.sdf"
+```
+> [!WARNING]
+> Remember to change **ros2_ws/** to your ros2 workspace folder
