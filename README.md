@@ -1,55 +1,39 @@
-# gazebo-to-ros2
+# gazebo to ros2
 
-Este pacote tem como objetivo criar uma cena simples no Gazebo com um LiDAR dentro de um galpão. Além disso, ele inicializa o `gzbridge` que faz a conexão entre os tópicos do Gazebo e do ROS 2.
+This package aims to create a simple scene in Gazebo with a LiDAR inside a warehouse. Additionally, it initializes the `gzbridge` that connects the Gazebo and ROS 2 topics.
 
-## Pré-requisitos
+## Prerequisites
 
-- **ROS 2** (Foxy, Galactic, Humble ou posterior)
-- **Gazebo** compatível com a versão do ROS 2 instalada
-- Pacotes do **gazebo_ros_pkgs**
-- **gzbridge** instalado e configurado
+- **ROS 2** (Foxy, Galactic, Humble, or later)
+- **Gazebo** compatible with the installed ROS 2 version
 
-## Clonando o Repositório
-Para clonar este repositorio:
+## Cloning the Repository
+Clone the repository inside the source folder of your ROS 2 workspace (**ros2_ws/src**):
 
 ```bash
+cd ros2_ws/src/
 git clone https://github.com/PPGIA-Sistemas-Ciberfisicos/gazebo-to-ros2.git
 ```
 
-## Construindo o Pacote
+## Building the Package
 
-Após clonar o repositório, navegue até o diretório do pacote e construa-o usando o colcon:
+After cloning the repository, navigate to the package directory and build it using colcon:
 
 ```bash
-cd gazebo-to-ros2
+cd ros2_ws/
 colcon build
 ```
 
-Não se esqueça de source o ambiente após a construção:
+Don't forget to source the environment after building:
 
 ```bash
 source install/setup.bash
 ```
 
-## Executando o Launch
+## Running the Launch
 
-Para iniciar a cena no Gazebo e inicializar o `gzbridge`, execute:
-
-```bash
-ros2 launch gazebo_to_ros2 gazebo_launch.py
-```
-
-Este comando irá:
-
-- Carregar a cena com o LiDAR dentro do galpão no Gazebo.
-- Inicializar o `gzbridge` para conectar os tópicos do Gazebo com o ROS 2.
-
-## Verificando os Tópicos
-
-Para listar os tópicos disponíveis:
+To start the scene in Gazebo and initialize the `gzbridge`, run:
 
 ```bash
-ros2 topic list
+ros2 launch gazebo_gz_to_ros2_simples husky_LiDAR_Dept.launch.py
 ```
-
-Isso permitirá visualizar os tópicos que estão sendo publicados e subscritos, tanto pelo Gazebo quanto pelo ROS 2.
